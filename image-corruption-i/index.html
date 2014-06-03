@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    
+    <title>Image Corruption I</title>
+    <meta name="description" content="" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="MobileOptimized" content="320" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="../favicon.ico">
+
+    
+    <link rel="stylesheet" type="text/css" href="../assets/css/screen.css?v=e90d247e99" />
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Noto+Serif:400,700,400italic|Open+Sans:700,400" />
+
+    
+    <meta name="generator" content="Ghost 0.4" />
+<link rel="alternate" type="application/rss+xml" title="RJones does things" href="../rss/index.html">
+<link rel="canonical" href="http://rashaunj.github.io/image-corruption-i/" />
+</head>
+<body class="post-template">
+
+    
+    
+
+
+
+<main class="content" role="main">
+
+    <article class="post">
+
+        
+        <header class="post-header">
+            <a class="blog-logo" href="http://rashaunj.github.io">
+                
+                    <span class="blog-title">RJones does things</span>
+                
+            </a>
+        </header>
+
+        
+        
+
+            <span class="post-meta"><time datetime="2014-06-02">02 Jun 2014</time> </span>
+
+            <h1 class="post-title">Image Corruption I</h1>
+
+            <section class="post-content">
+                <p>Lately I've been toying around with programmatic image corruption. If you're unfamiliiar with the concept, it's essentially the process of changing any image (we'll use this for example) <br />
+<img src="../content/images/2014/Jun/1546313_10201336792485184_751669344_n.jpg" alt="Uncorrupted image" /></p>
+
+<p>and converting it to something along the lines of: <br />
+<img src="../content/images/2014/Jun/1546313_10201336792485184_751669344_n_glitched_a45_s60_i8_q50.png" alt="Corrupted Image" /></p>
+
+<p>The intended affect shown in the 2nd image is achieved by semi-randomly changing hex values in the image. In the glitch art community, this is apparently known as databending. Although there are a few tools out there that can generate corrupted images for you such as: <br />
+(<a href="http://www.recyclism.com/corrupt.php">Corruptus</a>)
+(<a href="http://snorpey.github.io/jpg-glitch/">Corrupt by Snorpey</a>)
+I've found that they're complete but woefully undocumented solutions. <br />
+In my attempts to wean myself from creating endless amounts of glue code, I've decided to recreate this effect from scratch. That means</p>
+
+<ul>
+<li><p>No outside libraries (that related directly to image corruption)</p></li>
+<li><p>No peeking at source from existing libraries.</p></li>
+</ul>
+
+<p>I'll consider this my first weekly challenge.</p>
+
+<p>I'll be doing a complete writeup (with source on Github) later this week that will hopefully note both the procedure and logic behind .jpg (.gif additionally if I finish early enough) corruption.</p>
+            </section>
+
+            <footer class="post-footer">
+
+                <section class="author">
+                    <h4>RaShaun Jones</h4>
+                    <p></p>
+                </section>
+
+                <section class="share">
+                    <h4>Share this post</h4>
+                    <a class="icon-twitter" href="http://twitter.com/share?text=Image%20Corruption%20I&url=http://rashaunj.github.io/image-corruption-i/"
+                        onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                        <span class="hidden">Twitter</span>
+                    </a>
+                    <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://rashaunj.github.io/image-corruption-i/"
+                        onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                        <span class="hidden">Facebook</span>
+                    </a>
+                    <a class="icon-google-plus" href="https://plus.google.com/share?url=http://rashaunj.github.io/image-corruption-i/"
+                       onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                        <span class="hidden">Google+</span>
+                    </a>
+                </section>
+
+            </footer>
+
+        
+
+    </article>
+
+</main>
+
+    <footer class="site-footer">
+        <a class="subscribe icon-feed" href="http://rashaunj.github.io/rss/"><span class="tooltip">Subscribe!</span></a>
+        <div class="inner">
+             <section class="copyright">All content copyright <a href="http://rashaunj.github.io/">RJones does things</a> &copy; 2014 &bull; All rights reserved.</section>
+             <section class="poweredby">Proudly published with <a class="icon-ghost" href="http://ghost.org">Ghost</a></section>
+        </div>
+    </footer>
+
+    
+    <script src="../shared/vendor/jquery/jquery.js?v=e90d247e99"></script>
+
+    
+    <script type="text/javascript" src="../assets/js/jquery.fitvids.js?v=e90d247e99"></script>
+    <script type="text/javascript" src="../assets/js/index.js?v=e90d247e99"></script>
+
+</body>
+</html>
