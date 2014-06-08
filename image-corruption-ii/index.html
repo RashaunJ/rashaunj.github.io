@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
     
-    <title>Image Corruption I</title>
+    <title>Image Corruption II</title>
     <meta name="description" content="" />
 
     <meta name="HandheldFriendly" content="True" />
@@ -22,7 +22,7 @@
     
     <meta name="generator" content="Ghost 0.4" />
 <link rel="alternate" type="application/rss+xml" title="RJones does things" href="../rss/index.html">
-<link rel="canonical" href="http://rashaunj.github.io/image-corruption-i/" />
+<link rel="canonical" href="http://rashaunj.github.io/image-corruption-ii/" />
 </head>
 <body class="post-template">
 
@@ -47,31 +47,32 @@
         
         
 
-            <span class="post-meta"><time datetime="2014-06-02">02 Jun 2014</time> </span>
+            <span class="post-meta"><time datetime="2014-06-08">08 Jun 2014</time> </span>
 
-            <h1 class="post-title">Image Corruption I</h1>
+            <h1 class="post-title">Image Corruption II</h1>
 
             <section class="post-content">
-                <p>Lately I've been toying around with programmatic image corruption. If you're unfamiliiar with the concept, it's essentially the process of changing any image (we'll use this for example) <br />
-<img src="../content/images/2014/Jun/1546313_10201336792485184_751669344_n.jpg" alt="Uncorrupted image" /></p>
+                <h2 id="progress">Progress!</h2>
 
-<p>and converting it to something along the lines of: <br />
-<img src="../content/images/2014/Jun/1546313_10201336792485184_751669344_n_glitched_a45_s60_i8_q50.png" alt="Corrupted Image" /></p>
+<p>So I may have lied a bit. This post will not be the all-inclusive tutorial I promised on image corruption. This is more of a status update. I do have a working prototype of the corruption script, which I'm tentatively calling pyCorrupt (how creative...) As you can probably guess, the script is written in python. This is for a couple of reasons.</p>
 
-<p>The intended affect shown in the 2nd image is achieved by semi-randomly changing hex values in the image. In the glitch art community, this is apparently known as databending. Although there are a few tools out there that can generate corrupted images for you such as: <br />
-(<a href="http://www.recyclism.com/corrupt.php">Corruptus</a>)
-(<a href="http://snorpey.github.io/jpg-glitch/">Corrupt by Snorpey</a>)
-I've found that they're complete but woefully undocumented solutions. <br />
-In my attempts to wean myself from creating endless amounts of glue code, I've decided to recreate this effect from scratch. That means</p>
+<ol>
+<li>Python is convenient.  </li>
+<li>I'll probably be using flask to host the polished project.</li>
+</ol>
+
+<p>The script at the moment, is hardcoded, hacky, and altogether unpleasant to look at, however it is functional. As of right now, the script only supports .jpg images, however I'll probably look into making it work with gifs, provided I can find the proper information regarding its file headers (I'll go into this in much more detail in my full post)</p>
+
+<p>So far here have been the few key things that I've taken from this project</p>
 
 <ul>
-<li><p>No outside libraries (that related directly to image corruption)</p></li>
-<li><p>No peeking at source from existing libraries.</p></li>
+<li>.jpg files are split by markers (the only marker important to us in this context is Start of Scan (SOS)</li>
+<li>Hex values can for the most part be changed freely between the SOS and End of File (EOI) marker, without completely breaking the image. I have noticed in some cases that changing hex values right after the SOS marker will break an image, however I'll have to look into why this happens.</li>
 </ul>
 
-<p>I'll consider this my first weekly challenge.</p>
+<p>For the time being, here's an imgur gallery, with my guinea pig image as well as a few of the pictures the script generated.</p>
 
-<p>I'll be doing a complete writeup (with source on Github) later this week that will hopefully note both the procedure and logic behind .jpg (.gif additionally if I finish early enough) corruption.</p>
+<iframe class="imgur-album" width="100%" height="550" frameborder="0" src="http://imgur.com/a/Rsf77/embed"></iframe>
             </section>
 
             <footer class="post-footer">
@@ -83,15 +84,15 @@ In my attempts to wean myself from creating endless amounts of glue code, I've d
 
                 <section class="share">
                     <h4>Share this post</h4>
-                    <a class="icon-twitter" href="http://twitter.com/share?text=Image%20Corruption%20I&url=http://rashaunj.github.io/image-corruption-i/"
+                    <a class="icon-twitter" href="http://twitter.com/share?text=Image%20Corruption%20II&url=http://rashaunj.github.io/image-corruption-ii/"
                         onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
                         <span class="hidden">Twitter</span>
                     </a>
-                    <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://rashaunj.github.io/image-corruption-i/"
+                    <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://rashaunj.github.io/image-corruption-ii/"
                         onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
                         <span class="hidden">Facebook</span>
                     </a>
-                    <a class="icon-google-plus" href="https://plus.google.com/share?url=http://rashaunj.github.io/image-corruption-i/"
+                    <a class="icon-google-plus" href="https://plus.google.com/share?url=http://rashaunj.github.io/image-corruption-ii/"
                        onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
                         <span class="hidden">Google+</span>
                     </a>
